@@ -1,6 +1,8 @@
 import 'package:fipetable/app_controller.dart';
 import 'package:flutter/material.dart';
 
+import 'components/switch-darktheme.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -16,14 +18,10 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
+        actions: [CustomSwitch()],
       ),
       body: Center(
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value) {
-            AppController.instance.toggleTheme();
-          },
-        ),
+        child: Text('Content'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
