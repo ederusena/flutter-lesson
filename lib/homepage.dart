@@ -20,8 +20,16 @@ class HomePageState extends State<HomePage> {
         title: Text('Home Page'),
         actions: [CustomSwitch()],
       ),
-      body: Center(
-        child: Text('Content'),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Counter: $counter'),
+            CustomSwitch(),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
