@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../homepage.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -42,7 +44,15 @@ class _LoginPageState extends State<LoginPage> {
                     labelStyle: TextStyle(color: Colors.black)),
               ),
               Container(height: 10),
-              ElevatedButton(onPressed: () {}, child: Text('Login'))
+              ElevatedButton(
+                  onPressed: () {
+                    if (email != '' && password != '') {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    }
+                  },
+                  child: Text('Login'))
             ]),
           )),
     ));
