@@ -18,7 +18,14 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
-        actions: [CustomSwitch()],
+        actions: [
+          CustomSwitch(),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/');
+              },
+              child: Text('Logout'))
+        ],
       ),
       body: Container(
         width: double.infinity,
@@ -47,7 +54,7 @@ class HomePageState extends State<HomePage> {
                   width: 50,
                   height: 50,
                   color: Colors.green,
-                )
+                ),
               ],
             )
           ],
