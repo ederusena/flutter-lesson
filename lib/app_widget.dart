@@ -1,6 +1,7 @@
 import 'package:fipetable/app_controller.dart';
 import 'package:flutter/material.dart';
 
+import 'components/login_page.dart';
 import 'homepage.dart';
 
 class AppWidget extends StatelessWidget {
@@ -12,7 +13,7 @@ class AppWidget extends StatelessWidget {
       animation: AppController.instance,
       builder: (context, child) {
         return MaterialApp(
-            home: HomePage(),
+            home: LoginPage(),
             theme: ThemeData(
                 primarySwatch: Colors.red,
                 brightness: AppController.instance.isDarkTheme
