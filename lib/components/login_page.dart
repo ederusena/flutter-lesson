@@ -26,6 +26,13 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(8.0),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Container(
+                width: 150,
+                height: 150,
+                margin: const EdgeInsets.only(bottom: 20.0),
+                child: Image.network(
+                    'https://www.freepnglogos.com/uploads/marine-corps-png-logo/insignia-of-royal-thai-marine-corps-png-logo-3.png'),
+              ),
               TextField(
                 onChanged: (value) => email = value,
                 keyboardType: TextInputType.emailAddress,
