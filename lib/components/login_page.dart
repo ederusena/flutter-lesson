@@ -30,8 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: 150,
                 height: 150,
                 margin: const EdgeInsets.only(bottom: 20.0),
-                child: Image.network(
-                    'https://www.freepnglogos.com/uploads/marine-corps-png-logo/insignia-of-royal-thai-marine-corps-png-logo-3.png'),
+                child: Image.asset('assets/images/google-logo.png'),
               ),
               TextField(
                 onChanged: (value) => email = value,
