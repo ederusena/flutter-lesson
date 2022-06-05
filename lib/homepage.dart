@@ -1,4 +1,7 @@
+import 'package:fipetable/app_controller.dart';
 import 'package:flutter/material.dart';
+
+import 'components/switch-darktheme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,18 +18,48 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
+        actions: [
+          CustomSwitch(),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/');
+              },
+              child: Text('Logout'))
+        ],
       ),
-      body: Center(
-          child: GestureDetector(
-              child: Text(
-                "Contador: $counter",
-                style: TextStyle(fontSize: 20),
-              ),
-              onTap: () {
-                setState(() {
-                  counter++;
-                });
-              })),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Counter: $counter'),
+            Container(height: 50),
+            CustomSwitch(),
+            Container(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.blueAccent,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.green,
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
