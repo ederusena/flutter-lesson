@@ -33,32 +33,46 @@ class _LoginPageState extends State<LoginPage> {
                         margin: const EdgeInsets.only(bottom: 20.0),
                         child: Image.asset('assets/images/google-logo.png'),
                       ),
-                      TextField(
-                        onChanged: (value) => email = value,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Email',
-                            labelStyle: TextStyle(color: Colors.black)),
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(children: [
+                            TextField(
+                              onChanged: (value) => email = value,
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'Email',
+                                  labelStyle: TextStyle(color: Colors.black)),
+                            ),
+                            Container(height: 10),
+                            TextField(
+                              onChanged: (value) => password = value,
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'Password',
+                                  labelStyle: TextStyle(color: Colors.black)),
+                            ),
+                            Container(height: 10),
+                            ElevatedButton(
+                                onPressed: () {
+                                  if (email != '' && password != '') {
+                                    Navigator.of(context)
+                                        .pushReplacementNamed('/home');
+                                  }
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Text(
+                                    'Login',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                )),
+                          ]),
+                        ),
                       ),
-                      Container(height: 10),
-                      TextField(
-                        onChanged: (value) => password = value,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Password',
-                            labelStyle: TextStyle(color: Colors.black)),
-                      ),
-                      Container(height: 10),
-                      ElevatedButton(
-                          onPressed: () {
-                            if (email != '' && password != '') {
-                              Navigator.of(context)
-                                  .pushReplacementNamed('/home');
-                            }
-                          },
-                          child: Text('Login'))
                     ]),
               )),
         ),
